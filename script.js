@@ -2,7 +2,7 @@ const start = document.querySelector('#start');
 const stop = document.querySelector('#stop');
 let hexColor = '0123456789ABCDEF';
 let randomNum;
-let bgColorChange;
+let colorChangeInterval;
 
 function changeColor(){
   document.body.style.backgroundColor = colorCode();
@@ -18,9 +18,9 @@ function colorCode() {
 }
 
 start.addEventListener('click', () => {
-  bgColorChange = setInterval(changeColor, 2000);
+  colorChangeInterval= setInterval(changeColor, 2000);
 })
 
 stop.addEventListener('click', () => {
-  clearInterval(bgColorChange);
+  clearInterval(colorChangeInterval);
 })
